@@ -12,9 +12,12 @@ function Cart() {
     {
       selector.cartarr.map((res,index)=>{
     return(<div className='cartdiv' key={index}>
-      <h3>{res.title}</h3>
-      <button onClick={(e)=>dispatch(Delete(res.id))}>delete</button>
-
+      <div className='cartpage'>
+      <img src={selector.cartarr[index].thumbnail}></img>
+       <h3>{res.title}</h3>
+       <button onClick={(e)=>dispatch(Delete(index))}>delete</button>
+      
+      </div>
     </div>)
     })
     }

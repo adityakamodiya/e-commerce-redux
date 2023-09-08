@@ -26,12 +26,35 @@ box-sizing: border-box;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.products .product{
+.products .product {
     height: 350px;
-    width: 21%;
+    box-shadow: 1px 1px 2px 1px gray;
+    width: 29%;
     margin: 10px;
 }
 .products .product img{
     height: 75%;
     width: 100%;
+}
+.cartpage{
+    height: 100px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 1%;
+}
+.cartpage img{
+    border-radius: 5px ;
+    box-shadow: 1px 1px 2px 1px gray;
+    height: 90px;
+    width: 80px;
+}
+.cartpage h3,button{
+    margin-left: 2%;
+}
+.cartpage button {
+    padding: 11px 21px;
+    background: sandybrown;
+    border: none;
+    border-radius: 5px;
 }

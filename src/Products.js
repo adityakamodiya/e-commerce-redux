@@ -23,6 +23,7 @@ function Products() {
     // console.log(selector.arr.products)
   return(
     <>
+      {(selector.loader == true)?
     <div className='products'>
         {
           (selector.arr.products) ? 
@@ -40,8 +41,8 @@ function Products() {
             )
           }) : ''
         }
-      </div>
-    </>
+      </div>:<h1>loading...</h1>
+    }    </>
   )
   
 }

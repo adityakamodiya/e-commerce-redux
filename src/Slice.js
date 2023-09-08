@@ -16,7 +16,8 @@ export const Slice = createSlice({
     initialState: {
         cartval: 0,
         arr: [],
-        cartarr: []
+        cartarr: [],
+        loader:true
     },
     reducers: {
         Add: function (state, action) {
@@ -26,17 +27,18 @@ export const Slice = createSlice({
         },
         Delete: function (state, action) {
             console.log(action.payload)
-            state.cartarr = state.cartarr.filter((cartItem, index) => {
-                return cartItem.id !== action.payload
-            })
+            state.cartarr = state.cartarr.filter((item,index)=>action.payload!=index)
+   
             // state.cartarr.find((cartItem) => {return cartItem.id === index})
         }
     },
     extraReducers: {
         [fetchapi.pending]: function (state, action) {
+            state.loader = false
 
         },
         [fetchapi.fulfilled]: function (state, action) {
+            state.loader = true
             state.arr = action.payload
             //   console.log(state.arr)
         },
