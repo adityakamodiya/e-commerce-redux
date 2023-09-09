@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 // import { globel } from './Home'
 import { Add } from './Slice'
+import Randomfront from './Randomfront'
 import { fetchapi } from './Slice'
 
  
@@ -23,7 +24,9 @@ function Products() {
     // console.log(selector.arr.products)
   return(
     <>
+       
       {(selector.loader == true)?
+    <div><Randomfront/>
     <div className='products'>
         {
           (selector.arr.products) ? 
@@ -41,7 +44,8 @@ function Products() {
             )
           }) : ''
         }
-      </div>:<h1>loading...</h1>
+      </div></div>
+        :<h1>loading...</h1>
     }    </>
   )
   

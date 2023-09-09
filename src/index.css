@@ -9,8 +9,9 @@ box-sizing: border-box;
     height: 100px;
     padding: 0 2%;
     align-items: center;
-    /* position: fixed;
-    width: 100%; */
+    background-color: wheat;
+    position: fixed;
+    width: 100%; 
 }
 .header ul{
     list-style: none;
@@ -20,6 +21,26 @@ box-sizing: border-box;
 .header ul li{
     padding: 0 10px;
 }
+
+
+
+/* // RANDOM FRONT PAGE CSS */
+.front{
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    .front::before{
+        content: '';
+        background-color: rgba(44, 44, 165, 0);
+        position: absolute;
+        /* left: 25%;
+        top: 25%; */
+        height: 100vh;
+        width: 100%;
+        border: 1px solid;
+    }
 
 .products{
     display: flex;
@@ -58,3 +79,5 @@ box-sizing: border-box;
     border: none;
     border-radius: 5px;
 }
+
+
