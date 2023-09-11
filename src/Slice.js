@@ -1,4 +1,5 @@
 import axios from "axios";
+import { json } from "react-router-dom";
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 
@@ -18,9 +19,13 @@ export const Slice = createSlice({
         cartval: 0,
         arr: [],
         
-        cartarr: [],
-        loader:true
-    },
+        cartarr:
+        localStorage.getItem("cartArr") !== null
+          ? JSON.parse(localStorage.getItem("cartArr"))
+          :
+           [],
+          loader:true
+        },
     reducers: {
         Add: function (state, action) {
             console.log('add')
@@ -32,8 +37,14 @@ export const Slice = createSlice({
             state.cartarr = state.cartarr.filter((item,index)=>action.payload!=index)
    
             // state.cartarr.find((cartItem) => {return cartItem.id === index})
-        }
+        },
+        
+        AddToLocalStorage: function (state) {
+            localStorage.setItem("cartArr", JSON.stringify(state.cartarr));
+          },
+        
     },
+    
     extraReducers: {
         [fetchapi.pending]: function (state, action) {
             state.loader = false
@@ -57,4 +68,4 @@ export const Slice = createSlice({
 
 const sliceRed = Slice.reducer
 export default sliceRed;
-export const { Add, Delete } = Slice.actions
+export const { Add, Delete ,AddToLocalStorage} = Slice.actions

@@ -2,7 +2,7 @@ import React, {  useEffect, useState} from 'react'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 // import { globel } from './Home'
-import { Add } from './Slice'
+import { Add,AddToLocalStorage } from './Slice'
 import Randomfront from './Randomfront'
 import { fetchapi } from './Slice'
 
@@ -13,15 +13,17 @@ function Products() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchapi())
+    
     // console.log(selector)
   }, [])
   
-  // function myfunc()
-  // {
-    //   console.log('hello aditya')
-    // }
+  useEffect(() => {
+    dispatch(AddToLocalStorage());
+  }, [selector.cartarr]);
+
+  
+  
     
-    // console.log(selector.arr.products)
   return(
     <>
        

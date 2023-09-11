@@ -7,6 +7,23 @@ function Header() {
   const selector = useSelector((state)=>{return state.Data})
   const dispatch = useDispatch();
   // console.log(selector.cartarr.length)
+  function myfunc()
+  {
+   let  header = document.querySelector('.header')
+     window.onscroll  =()=>{
+      if(window.scrollY > 400){
+        header.style.position = 'fixed';
+        header.style.width = '100%'
+        header.style.transition = '2s'
+    }
+     else{
+     header.style.position = 'relative'
+      }    
+    
+  }
+    }
+    myfunc()
+    
   return (
     <>
     <nav className='header'>
