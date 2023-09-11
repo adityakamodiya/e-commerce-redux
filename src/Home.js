@@ -14,7 +14,7 @@ function Home() {
      {/* <Route path='/'element={<Randomfront/>}></Route>         */}
     <Route path='/' element={<Products/>}></Route>
           
-          <Route path='/cart' element={<Cart />}></Route>
+          <Route path='/cart' element={<Cart/>}></Route>
     </Routes>
     </BrowserRouter>
     </>

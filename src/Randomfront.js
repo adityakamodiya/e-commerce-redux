@@ -6,20 +6,21 @@ function Randomfront() {
     const dispatch = useDispatch();
     let random 
     let imglink
-    randomfunc()
     function randomfunc(){
-
+        
         if(selector.arr.products){
             // console.log("yes")
             random  = selector.arr.products[ Math.floor(Math.random()*selector.arr.products.length)]
-             imglink = random.thumbnail
+            imglink = random.thumbnail
             // setimg(random.thumbnail)
             console.log(imglink);
-    }
+        }
     } 
+    console.log(selector.arr1)
     
-
-//     useEffect(()=>{
+    
+            // useEffect(()=>{
+    randomfunc()
 // },[])
 
       return (

@@ -25,8 +25,9 @@ function Products() {
   return(
     <>
        
+       <Randomfront/>
       {(selector.loader == true)?
-    <div><Randomfront/>
+       <div>
     <div className='products'>
         {
           (selector.arr.products) ? 
@@ -38,7 +39,7 @@ function Products() {
               <h4>{product.title}</h4>
               
               
-              <button href=""  className='addBtn' onClick={(e)=>dispatch(Add( selector.arr.products[index]))} >Add To Cart </button>       
+              <button href=""  className='addBtn' onClick={(e)=>dispatch(Add(selector.arr.products[index]))} >Add To Cart </button>       
                   </div>
             </div>
             )

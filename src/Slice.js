@@ -3,6 +3,7 @@ const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 
 
+
 export const fetchapi = createAsyncThunk('add to cart', async () => {
     const response = await axios.get("https://dummyjson.com/products")
 
@@ -16,6 +17,7 @@ export const Slice = createSlice({
     initialState: {
         cartval: 0,
         arr: [],
+        
         cartarr: [],
         loader:true
     },
@@ -45,7 +47,9 @@ export const Slice = createSlice({
         [fetchapi.rejected]: function (state, action) {
 
 
-        }
+        },
+        
+
     }
 
 
