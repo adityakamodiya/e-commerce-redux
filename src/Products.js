@@ -41,12 +41,13 @@ function Products() {
               <h4>{product.title}</h4>
               
               
-              <button href=""  className='addBtn' onClick={(e)=>dispatch(Add(selector.arr.products[index]))}  onClick={Myfunc} >Add To Cart </button>       
+              <button href=""  className='addBtn' onClick={(e)=> dispatch(Add(selector.arr.products[index]))}>Add To Cart </button>       
                   </div>
             </div>
             )
           }) : ''
         }
+      {/* {(selector.playAudio) ? <audio src={selector.playAudio} autoPlay></audio> : ''} */}
       </div></div>
         :<h1>loading...</h1>
     }    </>

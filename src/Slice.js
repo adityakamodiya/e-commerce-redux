@@ -1,5 +1,6 @@
 import axios from "axios";
 import { json } from "react-router-dom";
+import aud from './click tone.wav'
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 
@@ -16,6 +17,7 @@ export const Slice = createSlice({
     initialState: {
         cartval: 0,
         arr: [],
+        playAudio: '',
 
         cartarr:
             localStorage.getItem("cartArr") !== null
@@ -28,6 +30,12 @@ export const Slice = createSlice({
         Add: function (state, action) {
 
             state.cartarr = [...state.cartarr, action.payload]
+           
+            //  state.playAudio = aud
+           let oo = document.createElement('audio')
+           oo.src = aud
+           console.log(oo) 
+           oo.play()
 
         },
         Delete: function (state, action) {
@@ -37,6 +45,11 @@ export const Slice = createSlice({
 
                 return action.payload != index
             }))
+            let oo = document.createElement('audio')
+            oo.src = aud
+            console.log(oo) 
+            oo.play()
+ 
 
 
 

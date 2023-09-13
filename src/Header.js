@@ -14,7 +14,7 @@ function Header() {
       if(window.scrollY > 400){
         header.style.position = 'fixed';
         header.style.width = '100%'
-        header.style.transition = '2s'
+        // header.style.transition = '2s'
     }
      else{
      header.style.position = 'relative'
