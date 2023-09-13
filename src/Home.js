@@ -10,8 +10,6 @@ function Home() {
     <BrowserRouter>
     <Header/>
     <Routes>
-      {/* <Randomfront/> */}
-     {/* <Route path='/'element={<Randomfront/>}></Route>         */}
     <Route path='/' element={<Products/>}></Route>
           
           <Route path='/cart' element={<Cart/>}></Route>

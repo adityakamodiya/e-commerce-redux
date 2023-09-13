@@ -8,8 +8,6 @@ const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 export const fetchapi = createAsyncThunk('add to cart', async () => {
     const response = await axios.get("https://dummyjson.com/products")
 
-    //   console.log(response.data.products)
-    //   setProductData(response.data.products)
     return response.data
 })
 
@@ -18,33 +16,40 @@ export const Slice = createSlice({
     initialState: {
         cartval: 0,
         arr: [],
-        
+
         cartarr:
-        localStorage.getItem("cartArr") !== null
-          ? JSON.parse(localStorage.getItem("cartArr"))
-          :
-           [],
-          loader:true
-        },
+            localStorage.getItem("cartArr") !== null
+                ? JSON.parse(localStorage.getItem("cartArr"))
+                :
+                [],
+        loader: true
+    },
     reducers: {
         Add: function (state, action) {
-            console.log('add')
+
             state.cartarr = [...state.cartarr, action.payload]
 
         },
         Delete: function (state, action) {
             console.log(action.payload)
-            state.cartarr = state.cartarr.filter((item,index)=>action.payload!=index)
-   
-            // state.cartarr.find((cartItem) => {return cartItem.id === index})
+            state.cartarr = (state.cartarr.filter((item, index) => {
+
+
+                return action.payload != index
+            }))
+
+
+
+
         },
-        
+
         AddToLocalStorage: function (state) {
-            localStorage.setItem("cartArr", JSON.stringify(state.cartarr));
-          },
-        
+            let x = localStorage.setItem("cartArr", JSON.stringify(state.cartarr));
+            console.log(x)
+        }
+
     },
-    
+
     extraReducers: {
         [fetchapi.pending]: function (state, action) {
             state.loader = false
@@ -59,7 +64,7 @@ export const Slice = createSlice({
 
 
         },
-        
+
 
     }
 
@@ -68,4 +73,4 @@ export const Slice = createSlice({
 
 const sliceRed = Slice.reducer
 export default sliceRed;
-export const { Add, Delete ,AddToLocalStorage} = Slice.actions
+export const { Add, Delete, AddToLocalStorage } = Slice.actions

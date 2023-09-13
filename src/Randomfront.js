@@ -25,19 +25,11 @@ function Randomfront() {
 
       return (
    <>
-    {/* { */}
-    {/* (selector.arr.products)?   */}
-    {/* selector.arr.products.map((res,index)=>{ */}
-
     
    <div className='front' style={{backgroundImage:'url('+imglink+')'}}>
-   {/* <h1>hello</h1> */}
-   {/* <img src={random}></img> */}
-   {/* {console.log('front')} */}
 
    </div>
-   {/* }):'' */}
-   {/* } */}
+
    </>
   )
 }
