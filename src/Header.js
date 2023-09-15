@@ -11,7 +11,7 @@ function Header() {
   {
    let  header = document.querySelector('.header')
      window.onscroll  =()=>{
-      if(window.scrollY > 400){
+      if(window.scrollY > 100){
         header.style.position = 'fixed';
         header.style.width = '100%'
         // header.style.transition = '2s'

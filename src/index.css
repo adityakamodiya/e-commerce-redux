@@ -9,7 +9,7 @@ box-sizing: border-box;
     height: 100px;
     padding: 0 2%;
     align-items: center;
-    background-color: wheat;
+    background-color: rgb(124, 138, 112);
     transition: all 2s ease-in-out;
     /* position: fixed; */
     z-index: 1;
@@ -36,7 +36,7 @@ box-sizing: border-box;
     }
     .front::before {
         content: '';
-        background-color: rgb(35 16 106 / 86%);
+        background-color: rgba(13, 7, 36, 0.86);
         position: absolute;
         height: 100vh;
         width: 100%;
@@ -82,7 +82,7 @@ box-sizing: border-box;
     border-radius: 5px;
 }
 #cart-wrapper{
-    height: 100%;
+    height: auto  ;
    background-color: black;
    animation: cart-wrapper;
    animation-duration: 3s;

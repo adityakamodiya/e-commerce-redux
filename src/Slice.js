@@ -24,9 +24,11 @@ export const Slice = createSlice({
                 ? JSON.parse(localStorage.getItem("cartArr"))
                 :
                 [],
-        loader: true
+        loader: true,
+        Quantity:1,
+        
     },
-    reducers: {
+    reducers: {                         
         Add: function (state, action) {
 
             state.cartarr = [...state.cartarr, action.payload]
@@ -37,6 +39,21 @@ export const Slice = createSlice({
            console.log(oo) 
            oo.play()
 
+        },
+        IncreaseQnt:function(state,action){
+        //   state.Quantity = ''
+        //   state.Quantity = state.Quantity + action.payload 
+        //   console.log(state.car)     
+          state.cartarr = (state.cartarr.filter((item, index) => {
+            // console.log(item)
+            return state.cartarr
+        })) 
+       
+
+
+
+        },
+        DecreaseQnt:function(state,action){
         },
         Delete: function (state, action) {
             console.log(action.payload)
@@ -49,16 +66,14 @@ export const Slice = createSlice({
             oo.src = aud
             console.log(oo) 
             oo.play()
- 
-
-
-
-
+           },
+        Delete_All:function(state,action){
+                state.cartarr = ''
         },
 
         AddToLocalStorage: function (state) {
             let x = localStorage.setItem("cartArr", JSON.stringify(state.cartarr));
-            console.log(x)
+            // console.log(x)
         }
 
     },
@@ -86,4 +101,4 @@ export const Slice = createSlice({
 
 const sliceRed = Slice.reducer
 export default sliceRed;
-export const { Add, Delete, AddToLocalStorage } = Slice.actions
+export const { Add, Delete,IncreaseQnt,DecreaseQnt, AddToLocalStorage,Delete_All } = Slice.actions
