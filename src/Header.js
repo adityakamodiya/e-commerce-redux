@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -18,11 +18,13 @@ function Header() {
     }
      else{
      header.style.position = 'relative'
-      }    
+     header.style.width = '100%'  
+    }    
     
   }
     }
-    myfunc()
+    useEffect(()=>{
+    myfunc()},[])
     
   return (
     <>

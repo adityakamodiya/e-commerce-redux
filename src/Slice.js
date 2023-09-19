@@ -25,50 +25,53 @@ export const Slice = createSlice({
                 :
                 [],
         loader: true,
-        Quantity:1,
-        
+        Quantity: 1,
+        QuantityArr: []
+
     },
-    reducers: {                         
+    reducers: {
         Add: function (state, action) {
-
+            //   console.log(state.cartarr=action.payload)
             state.cartarr = [...state.cartarr, action.payload]
-           
+            // return{ cartarr : [...state.cartarr,action.payload]}
+            // state.cartarr({cartarr:[...cartarr,action.payload]})
+            console.log(state.cartarr)
+            // setPlayers({ players: [...players, name] });
+            //    return state;
+
+
             //  state.playAudio = aud
-           let oo = document.createElement('audio')
-           oo.src = aud
-           console.log(oo) 
-           oo.play()
+            let oo = document.createElement('audio')
+            oo.src = aud
+            console.log(oo)
+            oo.play()
 
         },
-        IncreaseQnt:function(state,action){
-        //   state.Quantity = ''
-        //   state.Quantity = state.Quantity + action.payload 
-        //   console.log(state.car)     
-          state.cartarr = (state.cartarr.filter((item, index) => {
-            // console.log(item)
-            return state.cartarr
-        })) 
-       
-
-
-
+        IncreaseQnt: function (state, action) {
+            //    console.log('incr')
+               state.cartarr.filter((item,index)=>{
+               if( index ==action.payload)
+               {                  
+                state.Quantity +=1
+                console.log(state.Quantity)
+           } }) 
         },
-        DecreaseQnt:function(state,action){
+        DecreaseQnt: function (state, action) {
         },
         Delete: function (state, action) {
             console.log(action.payload)
             state.cartarr = (state.cartarr.filter((item, index) => {
-
+              
 
                 return action.payload != index
             }))
             let oo = document.createElement('audio')
             oo.src = aud
-            console.log(oo) 
+            console.log(oo)
             oo.play()
-           },
-        Delete_All:function(state,action){
-                state.cartarr = ''
+        },
+        Delete_All: function (state, action) {
+            state.cartarr = ''
         },
 
         AddToLocalStorage: function (state) {
@@ -86,7 +89,7 @@ export const Slice = createSlice({
         [fetchapi.fulfilled]: function (state, action) {
             state.loader = true
             state.arr = action.payload
-            //   console.log(state.arr)
+              console.log(state.arr)
         },
         [fetchapi.rejected]: function (state, action) {
 
@@ -101,4 +104,4 @@ export const Slice = createSlice({
 
 const sliceRed = Slice.reducer
 export default sliceRed;
-export const { Add, Delete,IncreaseQnt,DecreaseQnt, AddToLocalStorage,Delete_All } = Slice.actions
+export const { Add, Delete, IncreaseQnt, DecreaseQnt, AddToLocalStorage, Delete_All } = Slice.actions

@@ -5,27 +5,27 @@ function Randomfront() {
     const selector = useSelector((state) => { return state.Data })
     let randomImg;
 
-    useEffect(() => {
-        randomImg = randomFunc()
-    }, [selector])
+    // useEffect(() => {
+    //     randomImg = randomFunc()
+    // }, [selector])
     
 
     
-        async function randomFunc() {
-            console.log(selector.arr.products);
-            const random = await selector.arr.products[Math.floor(Math.random() * selector.arr.products.length)]
-            // setImgLink(random.thumbnail)
-            return random.thumbnail
-        }
+    //     async function randomFunc() {
+    //         console.log(selector.arr.products);
+    //         const random = await selector.arr.products[Math.floor(Math.random() * selector.arr.products.length)]
+    //         // setImgLink(random.thumbnail)
+    //         return random.thumbnail
+    //     }
     
 
     return (
         <>
-            <div className='front' style={{ backgroundImage: 'url(' + randomImg + ')' }}>
+            {/* <div className='front' style={{ backgroundImage: 'url(' + randomImg + ')' }}> */}
                 <div className='random-front-details'>
                     <h1></h1>
                 </div>
-            </div>
+            {/* </div> */}
 
         </>
     )
