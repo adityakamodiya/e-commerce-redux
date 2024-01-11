@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react'
-
+import React, { useEffect, useState } from 'react'
+import logo from "./logo.webp"
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 function Header() {
   const selector = useSelector((state)=>{return state.Data})
   const dispatch = useDispatch();
+  const [logoimg,setlogo] = useState(logo)
   // console.log(selector.cartarr.length)
   function myfunc()
   {
@@ -29,7 +30,7 @@ function Header() {
   return (
     <>
     <nav className='header'>
-      <h1>Site Logo</h1>
+      <img src={logoimg}></img>
       <ul>
       {/* <li><Link to="/"></Link></li> */}
         <li><Link to="/">Home</Link></li>

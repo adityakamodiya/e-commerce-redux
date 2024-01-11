@@ -10,7 +10,7 @@ function Home() {
     <>
       <BrowserRouter>
         <Header />
-        <Randomfront />
+        {/* <Randomfront /> */}
         <Routes>
           <Route path='/' element={<Products />}></Route>
           <Route path='/cart' element={<Cart />}></Route>
